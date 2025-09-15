@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import API from "../api/API";
+import API from "../api/api";
 
 import NotificationModal from "../components/NotificationModal";
 import SkeletonRow from "../components/campaigns/history/SkeletonRow";

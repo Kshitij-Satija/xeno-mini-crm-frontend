@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import Papa from "papaparse";
-import API from "../api/API";
+import API from "../api/api";
 
 import OrdersSkeleton from "../components/orders/OrdersSkeleton";
 import OrdersHeader from "../components/orders/OrdersHeader";

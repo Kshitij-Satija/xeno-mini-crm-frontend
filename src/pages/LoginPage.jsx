@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import API from "../api/API";
+import API from "../api/api";
 
 import googleLogo from "../assets/google_logo.png"; // <-- Import your local asset
 import "../App.css";

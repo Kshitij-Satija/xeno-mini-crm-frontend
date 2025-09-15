@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Papa from "papaparse";
-import API from "../api/API";
+import API from "../api/api";
 
 
 import CustomersSkeleton from "../components/customers/CustomersSkeleton";

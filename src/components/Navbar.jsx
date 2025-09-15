@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-import API from "../api/API";
+import API from "../api/api";
 
 const NavBar = () => {
   const [user, setUser] = useState(null);

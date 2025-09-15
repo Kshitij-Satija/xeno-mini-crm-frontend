@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import API from "../api/API";
+
 import NotificationModal from "../components/NotificationModal";
 
 import RuleBlock from "../components/campaigns/create/RuleBlock";

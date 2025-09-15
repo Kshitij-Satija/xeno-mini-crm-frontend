@@ -1,7 +1,15 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 const LandingPage = () => {
-    const navigate = useNavigate(); 
+  const navigate = useNavigate();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openRepo = (url) => {
+    window.open(url, "_blank", "noopener,noreferrer");
+    setIsModalOpen(false);
+  };
+
   return (
     <div className="min-h-screen bg-white flex flex-col items-center justify-center p-4 sm:p-8">
       <div className="max-w-6xl w-full space-y-16">
@@ -14,123 +22,157 @@ const LandingPage = () => {
             Mini CRM Platform
           </h1>
           <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            A scalable customer relationship management tool for intelligent segmentation, personalized campaigns, and AI-powered insights. Built with modern tech for real-world impact.
+            A scalable customer relationship management tool for intelligent
+            segmentation, personalized campaigns, and AI-powered insights. Built
+            with modern tech for real-world impact.
           </p>
+
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
             {/* Begin Journey Button */}
-<div style={{ display: "inline-block", position: "relative" }} className="group">
-  <button
-    style={{
-      position: "relative",
-      padding: "0.25rem",
-      fontWeight: 600,
-      lineHeight: 1.5,
-      color: "#fff",
-      backgroundColor: "#111",
-      borderRadius: "1rem",
-      boxShadow: "0 25px 50px -12px rgba(72, 187, 120, 0.75)",
-      cursor: "pointer",
-      transition: "all 0.3s ease-in-out",
-    }}
-    className="group-hover:scale-105 active:scale-95"
-  >
-    <span
-      style={{
-        position: "absolute",
-        inset: 0,
-        borderRadius: "1rem",
-        background: "linear-gradient(to right, #10b981, #06b6d4, #0ea5e9)",
-        padding: "2px",
-        opacity: 0,
-        transition: "opacity 0.5s",
-      }}
-      className="group-hover:opacity-100"
-    ></span>
-    <span
-      style={{
-        position: "relative",
-        zIndex: 10,
-        display: "flex",
-        alignItems: "center",
-        gap: "0.75rem",
-        padding: "0.75rem 1.5rem",
-        backgroundColor: "#111",
-        borderRadius: "1rem",
-      }}
-    >
-      <span
-        style={{
-          transition: "all 0.5s",
-        }}
-        className="group-hover:translate-x-1.5 group-hover:text-emerald-300"
-      >
-        Try out 
-      </span>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="currentColor"
-        style={{
-          width: "1.75rem",
-          height: "1.75rem",
-          transition: "all 0.5s",
-        }}
-        className="group-hover:translate-x-1.5 group-hover:text-emerald-300"
-      >
-        <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"></path>
-      </svg>
-    </span>
-  </button>
-</div>
+            <div
+              style={{ display: "inline-block", position: "relative" }}
+              className="group"
+            >
+              <button
+                onClick={() => navigate("/login")}
+                style={{
+                  position: "relative",
+                  padding: "0.25rem",
+                  fontWeight: 600,
+                  lineHeight: 1.5,
+                  color: "#fff",
+                  backgroundColor: "#111",
+                  borderRadius: "1rem",
+                  boxShadow: "0 25px 50px -12px rgba(72, 187, 120, 0.75)",
+                  cursor: "pointer",
+                  transition: "all 0.3s ease-in-out",
+                }}
+                className="group-hover:scale-105 active:scale-95"
+              >
+                <span
+                  style={{
+                    position: "absolute",
+                    inset: 0,
+                    borderRadius: "1rem",
+                    background:
+                      "linear-gradient(to right, #10b981, #06b6d4, #0ea5e9)",
+                    padding: "2px",
+                    opacity: 0,
+                    transition: "opacity 0.5s",
+                  }}
+                  className="group-hover:opacity-100"
+                ></span>
+                <span
+                  style={{
+                    position: "relative",
+                    zIndex: 10,
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "0.75rem",
+                    padding: "0.75rem 1.5rem",
+                    backgroundColor: "#111",
+                    borderRadius: "1rem",
+                  }}
+                >
+                  <span
+                    style={{
+                      transition: "all 0.5s",
+                    }}
+                    className="group-hover:translate-x-1.5 group-hover:text-emerald-300"
+                  >
+                    Try out
+                  </span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    style={{
+                      width: "1.75rem",
+                      height: "1.75rem",
+                      transition: "all 0.5s",
+                    }}
+                    className="group-hover:translate-x-1.5 group-hover:text-emerald-300"
+                  >
+                    <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"></path>
+                  </svg>
+                </span>
+              </button>
+            </div>
 
-{/* GitHub Button */}
-
-
-<a
-  href="https://github.com/your-repo"
-  target="_blank"
-  rel="noopener noreferrer"
-  style={{
-    display: "inline-flex",
-    alignItems: "center",
-    justifyContent: "center",
-    gap: "0.5rem",
-    cursor: "pointer",
-    padding: "0.75rem 1rem",
-    fontWeight: 800,
-    fontSize: "0.825rem",
-    lineHeight: "1rem",
-    borderRadius: "100px",
-    backgroundColor: "#000",
-    color: "#fff",
-    textDecoration: "none",
-    transition: "all 0.3s ease",
-  }}
-  onMouseEnter={(e) => {
-    e.currentTarget.style.color = "#fce803";
-    e.currentTarget.style.transform = "translateY(-0.25rem)";
-  }}
-  onMouseLeave={(e) => {
-    e.currentTarget.style.color = "#fff";
-    e.currentTarget.style.transform = "translateY(0)";
-  }}
->
-  <svg
-    width="16"
-    height="16"
-    viewBox="0 0 16 16"
-    fill="currentColor"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path d="M7.99992 1.33331C7.12444 1.33331 6.25753 1.50575 5.4487 1.84078C4.63986 2.17581 3.90493 2.66688 3.28587 3.28593C2.03563 4.53618 1.33325 6.23187 1.33325 7.99998C1.33325 10.9466 3.24659 13.4466 5.89325 14.3333C6.22659 14.3866 6.33325 14.18 6.33325 14C6.33325 13.8466 6.33325 13.4266 6.33325 12.8733C4.48659 13.2733 4.09325 11.98 4.09325 11.98C3.78659 11.2066 3.35325 11 3.35325 11C2.74659 10.5866 3.39992 10.6 3.39992 10.6C4.06659 10.6466 4.41992 11.2866 4.41992 11.2866C4.99992 12.3 5.97992 12 6.35992 11.84C6.41992 11.4066 6.59325 11.1133 6.77992 10.9466C5.29992 10.78 3.74659 10.2066 3.74659 7.66665C3.74659 6.92665 3.99992 6.33331 4.43325 5.85998C4.36659 5.69331 4.13325 4.99998 4.49992 4.09998C4.49992 4.09998 5.05992 3.91998 6.33325 4.77998C6.85992 4.63331 7.43325 4.55998 7.99992 4.55998C8.56659 4.55998 9.13992 4.63331 9.66659 4.77998C10.9399 3.91998 11.4999 4.09998 11.4999 4.09998C11.8666 4.99998 11.6333 5.69331 11.5666 5.85998C11.9999 6.33331 12.2533 6.92665 12.2533 7.66665C12.2533 10.2133 10.6933 10.7733 9.20659 10.94C9.44659 11.1466 9.66659 11.5533 9.66659 12.1733C9.66659 13.0666 9.66659 13.7866 9.66659 14C9.66659 14.18 9.77325 14.3933 10.1133 14.3333C12.7599 13.44 14.6666 10.9466 14.6666 7.99998C14.6666 7.1245 14.4941 6.25759 14.1591 5.44876C13.8241 4.63992 13.333 3.90499 12.714 3.28593C12.0949 2.66688 11.36 2.17581 10.5511 1.84078C9.7423 1.50575 8.8754 1.33331 7.99992 1.33331V1.33331Z"></path>
-  </svg>
-  <span>View on Github</span>
-</a>
-
-
-
+            {/* GitHub Button → Opens Modal */}
+            <button
+              onClick={() => setIsModalOpen(true)}
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "0.5rem",
+                cursor: "pointer",
+                padding: "0.75rem 1rem",
+                fontWeight: 800,
+                fontSize: "0.825rem",
+                lineHeight: "1rem",
+                borderRadius: "100px",
+                backgroundColor: "#000",
+                color: "#fff",
+                textDecoration: "none",
+                transition: "all 0.3s ease",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = "#fce803";
+                e.currentTarget.style.transform = "translateY(-0.25rem)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = "#fff";
+                e.currentTarget.style.transform = "translateY(0)";
+              }}
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M7.99992 1.33331C7.12444 1.33331 6.25753 1.50575 5.4487 1.84078C4.63986 2.17581 3.90493 2.66688 3.28587 3.28593C2.03563 4.53618 1.33325 6.23187 1.33325 7.99998C1.33325 10.9466 3.24659 13.4466 5.89325 14.3333C6.22659 14.3866 6.33325 14.18 6.33325 14C6.33325 13.8466 6.33325 13.4266 6.33325 12.8733C4.48659 13.2733 4.09325 11.98 4.09325 11.98C3.78659 11.2066 3.35325 11 3.35325 11C2.74659 10.5866 3.39992 10.6 3.39992 10.6C4.06659 10.6466 4.41992 11.2866 4.41992 11.2866C4.99992 12.3 5.97992 12 6.35992 11.84C6.41992 11.4066 6.59325 11.1133 6.77992 10.9466C5.29992 10.78 3.74659 10.2066 3.74659 7.66665C3.74659 6.92665 3.99992 6.33331 4.43325 5.85998C4.36659 5.69331 4.13325 4.99998 4.49992 4.09998C4.49992 4.09998 5.05992 3.91998 6.33325 4.77998C6.85992 4.63331 7.43325 4.55998 7.99992 4.55998C8.56659 4.55998 9.13992 4.63331 9.66659 4.77998C10.9399 3.91998 11.4999 4.09998 11.4999 4.09998C11.8666 4.99998 11.6333 5.69331 11.5666 5.85998C11.9999 6.33331 12.2533 6.92665 12.2533 7.66665C12.2533 10.2133 10.6933 10.7733 9.20659 10.94C9.44659 11.1466 9.66659 11.5533 9.66659 12.1733C9.66659 13.0666 9.66659 13.7866 9.66659 14C9.66659 14.18 9.77325 14.3933 10.1133 14.3333C12.7599 13.44 14.6666 10.9466 14.6666 7.99998C14.6666 7.1245 14.4941 6.25759 14.1591 5.44876C13.8241 4.63992 13.333 3.90499 12.714 3.28593C12.0949 2.66688 11.36 2.17581 10.5511 1.84078C9.7423 1.50575 8.8754 1.33331 7.99992 1.33331V1.33331Z"></path>
+              </svg>
+              <span>View on Github</span>
+            </button>
           </div>
         </div>
+
+        {/* GitHub Modal */}
+        {isModalOpen && (
+          <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-60 z-50">
+            <div className="bg-white rounded-2xl p-8 shadow-2xl w-80 text-center">
+              <h2 className="text-xl font-bold mb-6">Choose Repository</h2>
+              <div className="space-y-4">
+                <button
+                  onClick={() =>
+                    openRepo("https://github.com/your-frontend-repo")
+                  }
+                  className="w-full px-4 py-2 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition"
+                >
+                  Frontend
+                </button>
+                <button
+                  onClick={() =>
+                    openRepo("https://github.com/your-backend-repo")
+                  }
+                  className="w-full px-4 py-2 bg-green-600 text-white font-semibold rounded-xl hover:bg-green-700 transition"
+                >
+                  Backend
+                </button>
+              </div>
+              <button
+                onClick={() => setIsModalOpen(false)}
+                className="mt-6 text-gray-500 hover:text-gray-700 text-sm"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        )}
 
         {/* Features Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
